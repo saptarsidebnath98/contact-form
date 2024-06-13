@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import './App.css';
+export default function App(){
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="container">
+      <h1>Contact Us</h1>
+
+      <section className="name-section">
+        <div id="firstNameDiv">
+          <label htmlFor="firstName">First Name</label>
+          <input type="text" id="firstName"/>
+        </div>
+        <div id="lastNameDiv">
+          <label htmlFor="lastName">Last Name</label>
+          <input type="text" id="lastName"/>
+        </div>
+      </section>
+
+      <section id="email-section">
+        <label htmlFor="email">Email Address</label>
+        <input type="email" id="email"/>
+      </section>
+      
+      <section id="query-section">
+        <label htmlFor="queryType">Query Type</label>
+        <div className="query-options">
+          <div className="qu-div">
+            <input type="radio" id="generalQuery" value="General Query" name='query'/>
+            <label htmlFor="generalQuery">General Enquire</label>
+          </div>
+          <div className="qu-div">
+            <input type="radio" id="supportRequest" value="Support Request" name='query'/>
+            <label htmlFor="supportRequest">Support Request</label>
+          </div>
+        </div>
+      </section>
+      <section id="message-section">
+        <label htmlFor="message">Message</label>
+        <textarea id="message" cols="30" rows="10"></textarea>
+      </section>
+      <section id="consent-section">
+        <input type="checkbox" id="consent-check" name='agreed'/>
+        <label htmlFor='agreed'>I consent to be being contacted by the team</label>
+      </section>
+      
+      <section id="submit-section">
+        <button>Submit</button>
+      </section>
+    </div>
+    
+    
   )
 }
-
-export default App
